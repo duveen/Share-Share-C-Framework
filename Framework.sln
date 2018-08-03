@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNS", "SNS\SNS.csproj", "{E9185257-7BB5-4E16-A444-74A29F02C5F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNS.UI", "SNS.UI.Framework\SNS.UI.csproj", "{4292732C-57A6-47CE-854E-C615C9FB975D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNS.UI", "SNS.UI\SNS.UI.csproj", "{4292732C-57A6-47CE-854E-C615C9FB975D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
