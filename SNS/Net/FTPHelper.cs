@@ -21,7 +21,7 @@ namespace SNS.Net
             this.FileName = FileName;
             try
             {
-                request = (FtpWebRequest)WebRequest.Create(this.FileName);
+                request = (FtpWebRequest)WebRequest.Create(ConfigurationManager.AppSettings["FTP_URL"] + this.FileName);
                 request.Method = WebRequestMethods.Ftp.DownloadFile;
                 request.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["FTP.User"], ConfigurationManager.AppSettings["FTP.Password"]);
 
