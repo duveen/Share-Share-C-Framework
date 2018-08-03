@@ -7,7 +7,7 @@ using WinSCP;
 
 namespace SNS.Net
 {
-    public class FTPHelper
+    public class FTPHelper : IDisposable
     {
         private readonly int Length = 2048;
 
@@ -22,7 +22,7 @@ namespace SNS.Net
             SessionOptions sessionOptions = new SessionOptions
             {
                 Protocol = Protocol.Ftp,
-                HostName = ConfigurationManager.AppSettings["FTP.HostName"],
+                HostName = ConfigurationManager.AppSettings["FTP_URL"],
                 PortNumber = Convert.ToInt32(ConfigurationManager.AppSettings["FTP.PortNumber"]),
                 UserName = ConfigurationManager.AppSettings["FTP.UserName"],
                 Password = ConfigurationManager.AppSettings["FTP.Password"]
@@ -30,7 +30,7 @@ namespace SNS.Net
 
             SESSION = new Session();
             try
-            {
+            {                
                 SESSION.Open(sessionOptions);
             }
             catch { throw; }
@@ -55,14 +55,23 @@ namespace SNS.Net
             catch { throw; }
         }
 
-        public List <string> DownLoadFile(string FileName, bool remove = false)
+        public void Dispose()
+        {
+            if (SESSION != null)
+            {
+                SESSION.Close();
+                SESSION.Dispose();
+            }
+        }
+
+        public List<string> DownLoadFile(string localPath, string remotePath, string FileName, bool remove = false)
         {
             List<string> rstList = new List<string>();
             TransferOptions transferOptions = new TransferOptions();
             transferOptions.TransferMode = TransferMode.Binary;
 
             TransferOperationResult transferResult;
-            transferResult = SESSION.GetFiles((ConfigurationManager.AppSettings["FTP_URL"] + FileName), (ConfigurationManager.AppSettings["FTP.DownLoadPath"] + FileName), remove, transferOptions);
+            transferResult = SESSION.GetFiles($@"{remotePath}{FileName}", $@"{localPath}{FileName}", remove, transferOptions);
 
             transferResult.Check();
 
@@ -72,39 +81,7 @@ namespace SNS.Net
             }
 
             return rstList;
-
-            //    this.FileName = FileName;
-            //    try
-            //    {
-            //        request = (FtpWebRequest)WebRequest.Create(ConfigurationManager.AppSettings["FTP_URL"] + this.FileName);
-            //        request.Method = WebRequestMethods.Ftp.DownloadFile;
-            //        request.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["FTP.User"], ConfigurationManager.AppSettings["FTP.Password"]);
-
-            //        using (FtpWebResponse resp = (FtpWebResponse)request.GetResponse())
-            //        {
-            //            Stream responseStream = resp.GetResponseStream();
-            //            FileStream writeStream = new FileStream(ConfigurationManager.AppSettings["FTP.DownLoadPath"] + FileName, FileMode.Create);
-            //            byte[] buffer = new byte[Length];
-            //            int bytesRead = 0;
-
-            //            while (responseStream.Position < responseStream.Length)
-            //            {
-            //                bytesRead = responseStream.Read(buffer, 0, Length);
-            //                writeStream.Write(buffer, 0, bytesRead);
-            //            }
-
-            //            responseStream.Close();
-            //            writeStream.Close();
-            //        }
-            //        return true;
-            //    }
-            //    catch(Exception e)
-            //    {
-            //        Console.WriteLine(e);                
-            //        return false;
-            //    }
-
-        }
+        }        
     }
 
 }
