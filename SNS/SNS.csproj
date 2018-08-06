@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E9185257-7BB5-4E16-A444-74A29F02C5F2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SNS</RootNamespace>
     <AssemblyName>SNS</AssemblyName>
@@ -53,7 +53,7 @@
     <Compile Include="Data\FileHelper.cs" />
     <Compile Include="Data\IDBHelper.cs" />
     <Compile Include="Data\MsSqlHelper.cs" />
-    <Compile Include="MainApp.cs" />
+    <None Include="MainApp.cs" />
     <Compile Include="Net\FTPHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
