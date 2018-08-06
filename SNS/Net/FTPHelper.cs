@@ -9,13 +9,9 @@ namespace SNS.Net
 {
     public class FTPHelper : IDisposable
     {
-        private readonly int Length = 2048;
-
         public string FileName { get; set; }
-        private FtpWebRequest request;
 
         private Session SESSION;
-
 
         public FTPHelper()
         {
@@ -30,7 +26,7 @@ namespace SNS.Net
 
             SESSION = new Session();
             try
-            {                
+            {
                 SESSION.Open(sessionOptions);
             }
             catch { throw; }
@@ -64,7 +60,7 @@ namespace SNS.Net
             }
         }
 
-        public List<string> DownLoadFile(string localPath, string remotePath, string FileName, bool remove = false)
+        public List<string> DownloadFile(string localPath, string remotePath, string FileName, bool remove = false)
         {
             List<string> rstList = new List<string>();
             TransferOptions transferOptions = new TransferOptions();
@@ -83,7 +79,7 @@ namespace SNS.Net
             return rstList;
         }
 
-        public List<string> Upload(string localPath, string remotePath, bool remove = false)
+        public List<string> UploadFile(string localPath, string remotePath, bool remove = false)
         {
             List<string> rstFileName = new List<string>();
 
@@ -103,6 +99,6 @@ namespace SNS.Net
 
             return rstFileName;
         }
-        
+
     }
 }
