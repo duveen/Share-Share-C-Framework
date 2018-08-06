@@ -12,7 +12,7 @@ namespace SNS
         public static void Main(String[] args)
         {
             FTPHelper fh = new FTPHelper();
-            fh.DownLoadFile(@"C:\LOG_FILE\", @"/LOG_FILE/", @"2018-06-05.log");
+            fh.DownLoadFile(@"C:/LOG_FILE/", @"/LOG_FILE/", @"2018-06-05.log");
         }
     }
 }
