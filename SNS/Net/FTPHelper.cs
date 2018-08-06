@@ -9,8 +9,6 @@ namespace SNS.Net
 {
     public class FTPHelper : IDisposable
     {
-        public string FileName { get; set; }
-
         private Session SESSION;
 
         public FTPHelper()
@@ -58,6 +56,18 @@ namespace SNS.Net
                 SESSION.Close();
                 SESSION.Dispose();
             }
+        }
+
+        public List<string> GetFileList(string path = "/")
+        {
+            List<string> rstList = new List<string>();
+
+            RemoteDirectoryInfo directory = SESSION.ListDirectory(path);
+            foreach(RemoteFileInfo fileInfo in directory.Files)
+            {
+                rstList.Add($"{fileInfo.Name} with size {fileInfo.Length}, permissions {fileInfo.FilePermissions} and last modification at {fileInfo.LastWriteTime}");
+            }
+            return rstList;
         }
 
         public List<string> DownloadFile(string localPath, string remotePath, string FileName, bool remove = false)
