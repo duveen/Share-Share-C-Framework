@@ -95,8 +95,6 @@ namespace SNS.Net
             {
                 rstFileName.Add(transfer.FileName);
             }
-
-
             return rstFileName;
         }
 

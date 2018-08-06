@@ -1,4 +1,5 @@
-﻿using SNS.Net;
+﻿using SNS.Controller;
+using SNS.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace SNS
         public static void Main(String[] args)
         {
             FTPHelper fh = new FTPHelper();
-            fh.DownLoadFile(@"C:\LOG_FILE\", @"/LOG_FILE/", @"2018-06-05.log");
+            StringBuilder stringfile = ControlManager.Instance.FileHelper.GetStringFile(@"C:\Users\whdgu\Desktop\2018-06-18\2018-06-18.log");
+
+            Console.WriteLine(stringfile.ToString());
         }
     }
 }
