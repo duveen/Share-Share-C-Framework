@@ -81,7 +81,28 @@ namespace SNS.Net
             }
 
             return rstList;
-        }        
-    }
+        }
 
+        public List<string> Upload(string localPath, string remotePath, bool remove = false)
+        {
+            List<string> rstFileName = new List<string>();
+
+            TransferOptions transferOptions = new TransferOptions();
+            transferOptions.TransferMode = TransferMode.Binary;
+
+            TransferOperationResult transferResult;
+            transferResult = SESSION.PutFiles(localPath, remotePath, remove, transferOptions);
+
+            transferResult.Check();
+
+            foreach (TransferEventArgs transfer in transferResult.Transfers)
+            {
+                rstFileName.Add(transfer.FileName);
+            }
+
+
+            return rstFileName;
+        }
+        
+    }
 }
