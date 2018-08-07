@@ -8,5 +8,6 @@ namespace SNS.DataObject.SF
 {
     public class StreamFuction
     {
+        
     }
 }

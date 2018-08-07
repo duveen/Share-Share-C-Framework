@@ -9,13 +9,14 @@ namespace SNS.Controller
 {
     public class LogConvetHelper
     {
-
+        #region [ static ]
         static public readonly int YEAR_MONTH_DAY_INDEX = 1;
         static public readonly int HOUR_MINUTE_INDEX = 2;
         static public readonly int TRANSFER_TYPE_INDEX = 4;
         static public readonly int SF_INDEX = 5;
         static public readonly int SYSTEMBYTE_INDEX = 9;
         static public readonly string DATE_TIME_FORMAT = "yyyy/MM/dd HH:mm:ss.fff";
+        #endregion
 
         #region [ Method ]
         /// <summary>
@@ -53,8 +54,7 @@ namespace SNS.Controller
                     {
                         int SystemByte = int.Parse(SplitedLog[SYSTEMBYTE_INDEX]);
                         currentLog = new LOG(Time, H_Division, TransferType, SFName, SystemByte);
-                    }
-                    
+                    }                    
                     LogList.Add(currentLog);
                 }
                 else
