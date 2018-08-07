@@ -50,6 +50,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ControlManager.cs" />
+    <Compile Include="Controller\LogConvetHelper.cs" />
+    <Compile Include="DataObject\SF\S10F3.cs" />
+    <Compile Include="DataObject\SF\S10F4.cs" />
+    <Compile Include="DataObject\SF\S1F13.cs" />
+    <Compile Include="DataObject\SF\S1F14.cs" />
+    <Compile Include="DataObject\SF\S1F17.cs" />
+    <Compile Include="DataObject\SF\S1F18.cs" />
+    <Compile Include="DataObject\SF\S1F3.cs" />
+    <Compile Include="DataObject\SF\S1F4.cs" />
+    <Compile Include="DataObject\SF\S2F33.cs" />
+    <Compile Include="DataObject\SF\S2F34.cs" />
+    <Compile Include="DataObject\SF\S2F35.cs" />
+    <Compile Include="DataObject\SF\S2F36.cs" />
+    <Compile Include="DataObject\SF\S2F37.cs" />
+    <Compile Include="DataObject\SF\S2F38.cs" />
+    <Compile Include="DataObject\SF\S2F41.cs" />
+    <Compile Include="DataObject\SF\S2F42.cs" />
+    <Compile Include="DataObject\SF\S5F1.cs" />
+    <Compile Include="DataObject\SF\S6F11.cs" />
+    <Compile Include="DataObject\SF\S7F1.cs" />
+    <Compile Include="DataObject\SF\S7F2.cs" />
+    <Compile Include="DataObject\SF\S7F3.cs" />
+    <Compile Include="DataObject\SF\S7F4.cs" />
+    <Compile Include="DataObject\SF\S7F5.cs" />
+    <Compile Include="DataObject\SF\S7F6.cs" />
+    <Compile Include="DataObject\StaticEnum.cs" />
+    <Compile Include="DataObject\LOG.cs" />
+    <Compile Include="DataObject\SF\StreamFuction.cs" />
     <Compile Include="Data\FileHelper.cs" />
     <Compile Include="Data\IDBHelper.cs" />
     <Compile Include="Data\MsSqlHelper.cs" />
@@ -64,9 +92,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataObject\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\WinSCP.5.13.3\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.13.3\build\WinSCP.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

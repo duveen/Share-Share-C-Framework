@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SNS.Data
 {
-    public class FileHelper
+    public class FileHelper : IDisposable
     {
         #region [ Property ]
         public StreamReader streamReader { get; set; }

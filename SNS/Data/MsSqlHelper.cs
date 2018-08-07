@@ -52,6 +52,7 @@ namespace SNS.Data
             }
         }
         #endregion
+
         #region [ Method ]
         /// <summary> 
         /// 활성화 된 DbConnection을 반환합니다.
@@ -84,7 +85,7 @@ namespace SNS.Data
                 return false;
             }
 
-            #endregion
         }
+        #endregion
     }
 }

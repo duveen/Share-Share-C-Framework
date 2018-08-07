@@ -1,4 +1,5 @@
 ﻿using SNS.Data;
+using SNS.Net;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,6 +14,10 @@ namespace SNS.Controller
     {
         public static ControlManager Instance { get; set; } = new ControlManager();
 
+        public FTPHelper FTPHelper
+        {
+            get { return new FTPHelper(); }
+        }
         public IDBHelper DBHelper
         {
             get
@@ -29,6 +34,14 @@ namespace SNS.Controller
             {
                 return new FileHelper();
             }            
+        }
+
+        public LogConvetHelper LogConvetHelper
+        {
+            get
+            {
+                return new LogConvetHelper();
+            }
         }
         
 

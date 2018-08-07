@@ -63,7 +63,7 @@ namespace SNS.Net
             List<string> rstList = new List<string>();
 
             RemoteDirectoryInfo directory = SESSION.ListDirectory(path);
-            foreach(RemoteFileInfo fileInfo in directory.Files)
+            foreach (RemoteFileInfo fileInfo in directory.Files)
             {
                 rstList.Add($"{fileInfo.Name} with size {fileInfo.Length}, permissions {fileInfo.FilePermissions} and last modification at {fileInfo.LastWriteTime}");
             }
@@ -79,14 +79,21 @@ namespace SNS.Net
             TransferOperationResult transferResult;
             transferResult = SESSION.GetFiles($@"{remotePath}{FileName}", $@"{localPath}{FileName}", remove, transferOptions);
 
-            transferResult.Check();
-
-            foreach (TransferEventArgs transfer in transferResult.Transfers)
+            try
             {
-                rstList.Add(transfer.FileName);
+                transferResult.Check();
+                foreach (TransferEventArgs transfer in transferResult.Transfers)
+                {
+                    rstList.Add(transfer.FileName);
+                }
+
+                return rstList;
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
 
-            return rstList;
         }
 
         public List<string> UploadFile(string localPath, string remotePath, bool remove = false)
