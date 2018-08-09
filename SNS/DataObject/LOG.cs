@@ -1,23 +1,33 @@
 ﻿using SNS.DataObject.SF;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SNS.DataObject
 {
+    [DataContract]    
     public class LOG
     {
 
-        static public readonly string SF_PAKAGE_PATH = "SNS.DataObject.SF";
         
+
+        [DataMember]
         public HIGH_RANK_DIVISION H_Division { get; set; }
+        [DataMember]
         public DateTime Time { get; set; }
+        [DataMember]
         public string TransferType { get; set; }
+        [DataMember]
         public StreamFuction SF { get; set; }
-        public int SystemByte { get; set; }        
+        [DataMember]
+        public int SystemByte { get; set; }
+        [DataMember]
         public string AdditionINFO { get; set; }
+        [DataMember]
         public List<string> LowRankLogs { get; set; } = null;
 
         #region [ Constructor ]
@@ -27,9 +37,7 @@ namespace SNS.DataObject
             this.Time = Time;
             this.H_Division = H_Division;
             this.SystemByte = SystemByte;
-            this.TransferType = TransferType;
-
-            
+            this.TransferType = TransferType;            
         }
         public LOG(DateTime Time, HIGH_RANK_DIVISION H_Division, string TransferType, string AdditionINFO) : this(Time, H_Division, TransferType)
         {            
@@ -41,7 +49,7 @@ namespace SNS.DataObject
             this.SystemByte = SystemByte;
             try
             {
-                this.SF = Activator.CreateInstance(Type.GetType($"{SF_PAKAGE_PATH}.{SFName}")) as StreamFuction;
+                this.SF = Activator.CreateInstance(Type.GetType($"SNS.DataObject.SF.{SFName}")) as StreamFuction;                
             }
             catch (Exception e)
             {

@@ -1,11 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SNS.DataObject
 {
-    public enum HIGH_RANK_DIVISION { WARN, INFO, SEND, RECV, NON };
+
+    [DataContract]
+    public enum HIGH_RANK_DIVISION
+    {
+        [EnumMember]
+        WARN,
+        [EnumMember]
+        INFO,
+        [EnumMember]
+        SEND,
+        [EnumMember]
+        RECV,
+        [EnumMember]
+        NON
+    };
     
 }

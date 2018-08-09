@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SNS.DataObject.SF
 {
+    [DataContract]
     public class S1F14 : StreamFuction
     {
-        static readonly string CODE_NAME = "S1F14";
+        [DataMember]
+        public string CODE_NAME { get; set; } = "S1F14";
     }
 }

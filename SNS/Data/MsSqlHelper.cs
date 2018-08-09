@@ -90,9 +90,9 @@ namespace SNS.Data
                 {
                     command.CommandType = commandType;
                     command.CommandText = commandText;
-                    if(parameters != null)
+                    if (parameters != null)
                     {
-                        foreach(OleDbParameter param in parameters)
+                        foreach (OleDbParameter param in parameters)
                         {
                             if (param.OleDbType == OleDbType.Empty)
                                 continue;
@@ -101,7 +101,7 @@ namespace SNS.Data
                     }
                     result = command.ExecuteNonQuery();
                 }
-            return result;
+                return result;
             }
             catch (Exception e)
             {
@@ -112,9 +112,45 @@ namespace SNS.Data
             {
                 if (this.m_Transaction == null) connection.Close();
             }
+        }
 
+        public IDataReader ExecuteReader(string commandText, CommandType commandType = CommandType.Text, OleDbParameter[] parameters = null)
+        {
+            SqlConnection connection = null;
+            try
+            {
+                IDataReader result = null;
+
+                connection = GetConnection();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandType = commandType;
+                    command.CommandText = commandText;
+                    if(parameters != null)
+                    {
+                        foreach(OleDbParameter param in parameters)
+                        {
+                            if (param.OleDbType == OleDbType.Empty) continue;
+                            command.Parameters.Add(new SqlParameter(param.ParameterName, param.Value));
+                        }
+                    }
+
+                    result = command.ExecuteReader();
+                }
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (this.m_Transaction == null) connection.Close();
+            }
 
         }
+
+
 
         public void BeginTransaction()
         {
@@ -137,7 +173,7 @@ namespace SNS.Data
             this.m_Transaction = null;
             this.IsTransaction = false;
             this.DbConnection.Close();
-        }
+        }        
         #endregion
     }
 }
