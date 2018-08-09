@@ -42,7 +42,7 @@ namespace SNS.UI
         public void RunProgress()
         {
             Progress.Invoke(new ProgressVisible(ProgressView), true);
-            Progress.Invoke(new ProgressLocation(ProgressLoc), new Point(this.Width / 2, this.Height / 2));
+            Progress.Invoke(new ProgressLocation(ProgressLoc), new Point((this.Width / 2) - (Progress.Width / 2), (this.Height / 2) - (Progress.Height / 2)));
         }
 
         public void RunBackWorker()
