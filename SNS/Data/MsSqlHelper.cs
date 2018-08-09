@@ -86,7 +86,7 @@ namespace SNS.Data
             try
             {
                 connection = this.GetConnection();
-                using (SqlCommand command = connection.CreateCommand())
+                using (SqlCommand command = new SqlCommand(commandText, connection, m_Transaction))
                 {
                     command.CommandType = commandType;
                     command.CommandText = commandText;
