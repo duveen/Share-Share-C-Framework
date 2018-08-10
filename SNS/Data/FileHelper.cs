@@ -69,6 +69,22 @@ namespace SNS.Data
                 throw e;
             }
         }
+
+        public bool DeleteFile(string FilePath)
+        {
+            this.FilePath = FilePath;
+            FileInfo file = new FileInfo(this.FilePath);
+            try
+            {
+                file.Delete();
+                return true;
+            }
+            catch (Exception e)
+            {                
+                return false;
+            }
+            
+        }
         #endregion
     }
 }

@@ -150,8 +150,6 @@ namespace SNS.Data
 
         }
 
-
-
         public void BeginTransaction()
         {
             this.IsTransaction = true;

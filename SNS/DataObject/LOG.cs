@@ -28,7 +28,7 @@ namespace SNS.DataObject
         [DataMember]
         public string AdditionINFO { get; set; }
         [DataMember]
-        public List<string> LowRankLogs { get; set; } = null;
+        public List<string> LowRankLogs { get; set; } = new List<string>();
 
         #region [ Constructor ]
         public LOG() { }
@@ -63,8 +63,6 @@ namespace SNS.DataObject
         #region [ Method ] 
         public void AddLowRankLog(string line)
         {
-            if (LowRankLogs == null)
-                LowRankLogs = new List<string>();
             LowRankLogs.Add(line);
         }
         #endregion

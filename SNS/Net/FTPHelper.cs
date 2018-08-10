@@ -115,5 +115,17 @@ namespace SNS.Net
             return rstFileName;
         }
 
+        public bool RemoveFile(string path)
+        {
+            try
+            {
+                SESSION.RemoveFiles(path);
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
