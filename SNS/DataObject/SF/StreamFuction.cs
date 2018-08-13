@@ -38,6 +38,10 @@ namespace SNS.DataObject.SF
     public class StreamFuction
     {
         [DataMember]
-        public string CODE_NAME { get; set; };
+        public string CODE_NAME { get; set; }
+        public override string ToString()
+        {
+            return CODE_NAME;
+        }
     }
 }
