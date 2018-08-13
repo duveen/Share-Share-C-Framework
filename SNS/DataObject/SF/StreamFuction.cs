@@ -37,5 +37,7 @@ namespace SNS.DataObject.SF
     #endregion
     public class StreamFuction
     {
+        [DataMember]
+        public string CODE_NAME { get; set; };
     }
 }

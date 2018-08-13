@@ -10,7 +10,9 @@ namespace SNS.DataObject.SF
     [DataContract]
     public class S7F6 : StreamFuction
     {
-        [DataMember]
-        public string CODE_NAME { get; set; } = "S7F6";
+        public S7F6()
+        {
+            this.CODE_NAME = "S7F6";
+        }
     }
 }
