@@ -24,13 +24,13 @@ namespace SNS.Controller
         /// </summary>
         /// <param name="strLog"></param>
         /// <returns></returns>
-        public List<LOG> ConvertToLogInstance(StringBuilder strLog)
+        public List<LOG> ConvertToLogInstance(List<string> strLog)
         {
             List<LOG> LogList = new List<LOG>();
-            string[] LogToken = strLog.ToString().Split('\n');
+            
             LOG currentLog = null;
 
-            foreach (string line in LogToken)
+            foreach (string line in strLog)
             {
                 HIGH_RANK_DIVISION H_Division = GetkHighRankLogDivision(line);
 
@@ -62,7 +62,6 @@ namespace SNS.Controller
                     currentLog.AddLowRankLog(line);
                 }
             }
-
             return LogList;
         }
 

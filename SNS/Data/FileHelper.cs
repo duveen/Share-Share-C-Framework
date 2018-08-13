@@ -46,11 +46,11 @@ namespace SNS.Data
             return this.streamReader;
         }
 
-        public StringBuilder GetStringFile(string FilePath)
+        public List<string> GetStringFile(string FilePath)
         {
             StreamReader stream = null;
             this.FilePath = FilePath;
-            StringBuilder StringFile = new StringBuilder();
+            List<string> StringFile = new List<string>();
             try
             {
 
@@ -58,7 +58,7 @@ namespace SNS.Data
                 {
                     while (stream.EndOfStream == false)
                     {
-                        StringFile.Append(stream.ReadLine()).AppendLine();
+                        StringFile.Add(stream.ReadLine());
                     }
                 }
                 return StringFile;
