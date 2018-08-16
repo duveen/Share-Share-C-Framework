@@ -22,7 +22,8 @@ namespace SNS.DataObject
         [DataMember]
         public string TransferType { get; set; }
         [DataMember]
-        public StreamFuction SF { get; set; }
+        public string SF { get; set; }
+        public StreamFuction SFInstance { get; set; }
         [DataMember]
         public int SystemByte { get; set; }
         [DataMember]
@@ -49,7 +50,8 @@ namespace SNS.DataObject
             this.SystemByte = SystemByte;
             try
             {
-                this.SF = Activator.CreateInstance(Type.GetType($"SNS.DataObject.SF.{SFName}")) as StreamFuction;                
+                this.SF = SFName;
+                this.SFInstance = Activator.CreateInstance(Type.GetType($"SNS.DataObject.SF.{SFName}")) as StreamFuction;                
             }
             catch (Exception e)
             {
