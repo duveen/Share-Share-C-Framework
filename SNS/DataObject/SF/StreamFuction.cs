@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SNS.DataObject.SF
-{    
+{
 
     [DataContract]
     #region [ KnoewType ]    
@@ -43,7 +43,8 @@ namespace SNS.DataObject.SF
     public class StreamFuction
     {
         [DataMember]
-        public string CODE_NAME { get; set; } 
+        public string CODE_NAME { get; set; }
         public string DESCRIPTION { get; set; }
+        public string STRUCTURE { get; set; }
     }
 }
