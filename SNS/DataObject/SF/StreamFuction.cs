@@ -44,7 +44,9 @@ namespace SNS.DataObject.SF
     {
         [DataMember]
         public string CODE_NAME { get; set; }
+        [DataMember]
         public string DESCRIPTION { get; set; }
+        [DataMember]
         public string STRUCTURE { get; set; }
     }
 }
