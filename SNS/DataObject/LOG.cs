@@ -23,6 +23,7 @@ namespace SNS.DataObject
         public string TransferType { get; set; }
         [DataMember]
         public string SF { get; set; }
+        [DataMember]
         public StreamFuction SFInstance { get; set; }
         [DataMember]
         public int SystemByte { get; set; }
