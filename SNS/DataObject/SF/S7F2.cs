@@ -12,7 +12,9 @@ namespace SNS.DataObject.SF
     {
         public S7F2()
         {
-            this.CODE_NAME = "S7F2";
+            this.CODE_NAME = "S7, F2 Process Program Load Grant (PPG)";
+            this.DESCRIPTION = @"Equipment reply to host-originated S7,F1. Used to acknowledge or reject host request to download
+                                   multi-block process program.";
         }
     }
 }

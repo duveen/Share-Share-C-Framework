@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S10F4()
         {
-            this.CODE_NAME = "S10F4";
+            this.CODE_NAME = "S10, F4 Terminal Display, Single Acknowledge (VTA)";
+            this.DESCRIPTION = "Equipment response to S10,F3";            
         }
     }
 }

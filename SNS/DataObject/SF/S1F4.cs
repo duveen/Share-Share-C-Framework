@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S1F4()
         {
-            this.CODE_NAME = "S1F4";
+            this.CODE_NAME = "S1, F4 Selected Equipment Status Data (SSD)";
+            this.DESCRIPTION = "Returned by the equipment to report the SV values in the order requested.";
         }
     }
 }

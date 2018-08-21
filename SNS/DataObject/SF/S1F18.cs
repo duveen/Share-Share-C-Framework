@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S1F18()
         {
-            this.CODE_NAME = "S1F18";
+            this.CODE_NAME = "S1, F18 ON-LINE Acknowledge (ONLA)";
+            this.DESCRIPTION = "ON-LINE request acknowledge or error.";
         }
     }
 }

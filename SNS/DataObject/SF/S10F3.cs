@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S10F3()
         {
-            this.CODE_NAME = "S10F3";
+            this.CODE_NAME = "S10, F3 Terminal Display, Single (VTN)";
+            this.DESCRIPTION = "The host requests the equipment to display a single line of text on its terminal display";
         }
     }
 }

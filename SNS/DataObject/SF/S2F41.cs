@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S2F41()
         {
-            this.CODE_NAME = "S2F41";
+            this.CODE_NAME = "S2, F41 Host Command Send (HCS)";
+            this.DESCRIPTION = "The host requests the equipment perform a specified remote command.";
         }
     }
 }

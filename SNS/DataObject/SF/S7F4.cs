@@ -12,7 +12,9 @@ namespace SNS.DataObject.SF
     {
         public S7F4()
         {
-            this.CODE_NAME = "S7F4";
+            this.CODE_NAME = "S7, F4 Process Program Acknowledge (PPA)";
+            this.DESCRIPTION = @"Equipment reply to host-originated S7,F3. Used to acknowledge or reject process program
+                                   downloaded from the host.";
         }
     }
 }

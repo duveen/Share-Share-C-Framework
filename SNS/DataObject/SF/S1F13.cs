@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S1F13()
         {
-            this.CODE_NAME = "S1F13";
+            this.CODE_NAME = "S1, F13 Establish Communications Request (CR)";
+            this.DESCRIPTION = "Used by the host to attempt to initialize communications with the equipment.";
         }
     }
 }

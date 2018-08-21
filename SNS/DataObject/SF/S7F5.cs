@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S7F5()
         {
-            this.CODE_NAME = "S7F5";
+            this.CODE_NAME = "S7, F5 Process Program Request (PPR)";
+            this.DESCRIPTION = "Used by the host to request an existing process program from the equipment.";
         }
     }
 }

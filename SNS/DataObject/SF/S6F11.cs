@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S6F11()
         {
-            this.CODE_NAME = "S6F11";
+            this.CODE_NAME = "S6,F11 Event Report Send (ERS)";
+            this.DESCRIPTION = "Used by the equipment to notify the host of an event.";
         }
     }
 }

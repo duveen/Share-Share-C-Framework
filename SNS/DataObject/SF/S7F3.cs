@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S7F3()
         {
-            this.CODE_NAME = "S7F3";
+            this.CODE_NAME = "S7, F3 Process Program Send (PPS)";
+            this.DESCRIPTION = "Used by the host to send an existing process program to the equipment.";
         }
     }
 }

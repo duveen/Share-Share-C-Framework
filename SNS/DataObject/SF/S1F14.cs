@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S1F14()
         {
-            this.CODE_NAME = "S1F14";
+            this.CODE_NAME = "S1, F14 Establish Communications Request Acknowledge (CRA)";
+            this.DESCRIPTION = "Equipment reply to host-originated S1,F13.";
         }
     }
 }

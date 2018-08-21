@@ -12,7 +12,9 @@ namespace SNS.DataObject.SF
     {
         public S2F34()
         {
-            this.CODE_NAME = "S2F34";
+            this.CODE_NAME = "S2, F34 Define Report Acknowledge (DRA)";
+            this.DESCRIPTION = @"Acknowledge or error. If an error condition is detected the entire message is rejected (i.e. partial
+                                   changes are not allowed).";
         }
     }
 }

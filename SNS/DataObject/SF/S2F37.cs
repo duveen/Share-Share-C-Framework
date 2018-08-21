@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S2F37()
         {
-            this.CODE_NAME = "S2F37";
+            this.CODE_NAME = "S2, F37 Enable/Disable Event Report (EDER)";
+            this.DESCRIPTION = "Used by the host to enable or disable specific event reports on the equipment.";
         }
     }
 }

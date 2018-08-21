@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S2F42()
         {
-            this.CODE_NAME = "S2F42";
+            this.CODE_NAME = "S2,F42 Host Command Acknowledge (HCA)";
+            this.DESCRIPTION = "Host command acknowledge or error.";
         }
     }
 }

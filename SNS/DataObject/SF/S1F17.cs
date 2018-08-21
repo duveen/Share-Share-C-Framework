@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S1F17()
         {
-            this.CODE_NAME = "S1F17";
+            this.CODE_NAME = "S1, F17 Request ON-LINE (RONL)";
+            this.DESCRIPTION = "Used by the host to request equipment transition to the ON-LINE control state.";
         }
     }
 }

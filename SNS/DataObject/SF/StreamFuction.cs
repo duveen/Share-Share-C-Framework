@@ -43,10 +43,10 @@ namespace SNS.DataObject.SF
     public class StreamFuction
     {
         [DataMember]
-        public string CODE_NAME { get; set; }
+        public string CODE_NAME { get; set; } = string.Empty;
         [DataMember]
-        public string DESCRIPTION { get; set; }
+        public string DESCRIPTION { get; set; } = string.Empty;
         [DataMember]
-        public string STRUCTURE { get; set; }
+        public string STRUCTURE { get; set; } = string.Empty;
     }
 }

@@ -12,7 +12,9 @@ namespace SNS.DataObject.SF
     {
         public S7F1()
         {
-            this.CODE_NAME = "S7F1";
+            this.CODE_NAME = "S7, F1 Process Program Load Inquire (PPI) ";
+            this.DESCRIPTION = @"This message is used by the host to inquire whether or not the equipment will accept the download
+                                   of a multi - block process program.";
         }
     }
 }

@@ -12,7 +12,8 @@ namespace SNS.DataObject.SF
     {
         public S5F1()
         {
-            this.CODE_NAME = "S5F1";
+            this.CODE_NAME = "S5, F1 Alarm Report Send (ARS)";
+            this.DESCRIPTION = "Report change in or presence of an alarm condition.";
         }
     }
 }
