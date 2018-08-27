@@ -14,6 +14,12 @@ namespace SNS.DataObject.SF
         {
             this.CODE_NAME = "S1, F18 ON-LINE Acknowledge (ONLA)";
             this.DESCRIPTION = "ON-LINE request acknowledge or error.";
+            this.STRUCTURE = @"<B[1]>. * ONLACK";
+            this.DetailContents.Add("ONLACK", @"ON-LINE request acknowledge code.
+0 = ON - LINE accepted
+1 = ON - LINE not allowed
+2 = Equipment already ON - LINE
+3 - 63 = Reserved");
         }
     }
 }

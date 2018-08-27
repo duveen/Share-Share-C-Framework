@@ -48,5 +48,7 @@ namespace SNS.DataObject.SF
         public string DESCRIPTION { get; set; } = string.Empty;
         [DataMember]
         public string STRUCTURE { get; set; } = string.Empty;
+        [DataMember]
+        public Dictionary<string, string> DetailContents = new Dictionary<string, string>();
     }
 }
