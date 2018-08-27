@@ -15,9 +15,9 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S7, F3 Process Program Send (PPS)";
             this.DESCRIPTION = "Used by the host to send an existing process program to the equipment.";
             this.STRUCTURE = @"<L[2]
-                                    <A[MAX 80]> * PPID
-                                    <B[MAX N]> * PPBODY
-                                 >";
+   <A[MAX 80]> * PPID
+   <B[MAX N]> * PPBODY
+>";
             this.DetailContents.Add("PPID", @"Process program ID. This is the name of the process program:
 If PPSelectMode = 0, use standard DOS compatible “8.3”
 format.

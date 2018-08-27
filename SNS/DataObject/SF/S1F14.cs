@@ -15,12 +15,12 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S1, F14 Establish Communications Request Acknowledge (CRA)";
             this.DESCRIPTION = "Equipment reply to host-originated S1,F13.";
             this.STRUCTURE = @"<L[2]
-                                    <B[1]> * COMMACK
-                                    <L[2]
-                                        <A[MAX 6]> * MDLN
-                                        <A[MAX 32]> * SOFTREV
-                                    >
-                                 >";
+   <B[1]> * COMMACK
+   <L[2]
+       <A[MAX 6]> * MDLN
+       <A[MAX 32]> * SOFTREV
+   >
+>";
             this.DetailContents.Add("COMMACK", @"Communications acknowledge code.
 0 = Accepted
 1 = Denied, try again

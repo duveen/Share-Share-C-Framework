@@ -16,14 +16,14 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S2,F42 Host Command Acknowledge (HCA)";
             this.DESCRIPTION = "Host command acknowledge or error.";
             this.STRUCTURE = @"<L[2]
-                                    <B[1]> * HCACK
-                                    <L[1] **
-                                        <L[2]
-                                            <A[MAX N ]> * CPNAME
-                                            <V> * CPACK
-                                        >
-                                    >
-                                 >";
+   <B[1]> * HCACK
+   <L[1] **
+       <L[2]
+           <A[MAX N ]> * CPNAME
+           <V> * CPACK
+       >
+   >
+>";
             this.DetailContents.Add("HCACK", @"Host command parameter acknowledge code.
 0 = Acknowledge; command has been performed
 1 = Command does not exist

@@ -15,12 +15,12 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S1, F4 Selected Equipment Status Data (SSD)";
             this.DESCRIPTION = "Returned by the equipment to report the SV values in the order requested.";
             this.STRUCTURE = @"<L[MAX N]
-                                    <V> * SV1
-                                    .
-                                    .
-                                    .
-                                    <V> * SVN
-                                 >";
+   <V> * SV1
+   .
+   .
+   .
+   <V> * SVN
+>";
             this.DetailContents.Add("SV", "Status variable value.");
         }
     }

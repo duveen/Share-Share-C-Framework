@@ -18,33 +18,33 @@ namespace SNS.DataObject.SF
                                    defined before it is linked to an event (see S2,F33). In SECS-I environments, if this message is
                                    multi-block, then it must be preceded by a successful S2,F39/S2,F40 Inquire/Grant transaction.";
             this.STRUCTURE = @"<L[2]
-                                    <U2[1]> * DATAID ()
-                                    <L[N]
-                                        <L1[2]
-                                            <U2[1]> * CEID1
-                                            <L[M]
-                                                <U2[1]>* RPTID1
-                                                .
-                                                .
-                                                .
-                                                <U2[1]>* RPTIDM
-                                            >
-                                        >                                        
-                                        .
-                                        .
-                                        .
-                                        <LN[2]
-                                            <U2[1]> * CEIDN
-                                            <L[M]
-                                            <U2[1]>* RPTID1
-                                            .
-                                            .
-                                            .
-                                            <U2[1]>* RPTIDM
-                                            >
-                                        >
-                                    >
-                                 >";
+   <U2[1]> * DATAID ()
+   <L[N]
+       <L1[2]
+           <U2[1]> * CEID1
+           <L[M]
+               <U2[1]>* RPTID1
+               .
+               .
+               .
+               <U2[1]>* RPTIDM
+           >
+       >                                        
+       .
+       .
+       .
+       <LN[2]
+           <U2[1]> * CEIDN
+           <L[M]
+           <U2[1]>* RPTID1
+           .
+           .
+           .
+           <U2[1]>* RPTIDM
+           >
+       >
+   >
+>";
             this.DetailContents.Add("DATAID", @"Data ID.
 In SECS-I environments, the equipment uses the DATAID to
 match a multi-block S2F33,F35,F45 with the corresponding

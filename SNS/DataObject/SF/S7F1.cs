@@ -16,9 +16,9 @@ namespace SNS.DataObject.SF
             this.DESCRIPTION = @"This message is used by the host to inquire whether or not the equipment will accept the download
                                    of a multi - block process program.";
             this.STRUCTURE = @"<L[2]
-                                    <A[MAX 80]> * PPID
-                                    <U4[1]> * LENGTH
-                                 >";
+   <A[MAX 80]> * PPID
+   <U4[1]> * LENGTH
+>";
             this.DetailContents.Add("PPID", @"Process program ID. This is the name of the process program:
 If PPSelectMode = 0, use standard DOS compatible “8.3”
 format.

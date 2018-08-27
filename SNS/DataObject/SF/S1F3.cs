@@ -15,12 +15,12 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S1, F3 Selected Equipment Status Request";
             this.DESCRIPTION = "Used to request the values of selected status variables.";
             this.STRUCTURE = @"<L[MAX N]
-                                    <U2[1]> * SVID1
-                                    .
-                                    .
-                                    .
-                                    <U2[1]> * SVIDN
-                                 >";
+   <U2[1]> * SVID1
+   .
+   .
+   .
+   <U2[1]> * SVIDN
+>";
             this.DetailContents.Add("SVID", @"Status variable ID. Status variables may include any parameter
 that can be sampled in time such as temperature or quantity of
 a consumable.");

@@ -15,34 +15,34 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S6,F11 Event Report Send (ERS)";
             this.DESCRIPTION = "Used by the equipment to notify the host of an event.";
             this.STRUCTURE = @"<L[3]
-                                    < U2[1] > *DATAID
-                                    < U2[1] > *CEID
-                                    < L[N]
-                                        < L1[2]
-                                            < U2[1] > *RPTID1
-                                            < L[M]
-                                                < V > *V1
-                                                .
-                                                .
-                                                .
-                                                < V > *VM
-                                            >
-                                        >
-                                        .
-                                      .
-                                        .
-                                        < LN[2]
-                                            < U2[1] > *RPTIDN
-                                            < L[M]
-                                                < V > *V1
-                                                .
-                                                .
-                                                .
-                                                < V > *VM
-                                            >
-                                        >
-                                    >
-                                 >";
+   < U2[1] > *DATAIDzzzzzzzzzzzz
+   < U2[1] > *CEID
+   < L[N]
+       < L1[2]
+           < U2[1] > *RPTID1
+           < L[M]
+               < V > *V1
+               .
+               .
+               .
+               < V > *VM
+           >
+       >
+       .
+     .
+       .
+       < LN[2]
+           < U2[1] > *RPTIDN
+           < L[M]
+               < V > *V1
+               .
+               .
+               .
+               < V > *VM
+           >
+       >
+   >
+>";
             this.DetailContents.Add("DATAID", @"Data ID.
 In SECS-I environments, the equipment uses the DATAID to
 match a multi-block S2F33,F35,F45 with the corresponding
