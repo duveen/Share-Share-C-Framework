@@ -70,6 +70,32 @@ namespace SNS.Net
             return rstList;
         }
 
+        public List<string> DownloadFile(string remotePath, string localPath, bool remove = false)
+        {
+            List<string> rstList = new List<string>();
+            TransferOptions transferOptions = new TransferOptions();
+            transferOptions.TransferMode = TransferMode.Binary;
+
+            TransferOperationResult transferResult;
+            transferResult = SESSION.GetFiles($@"{remotePath}", $@"{localPath}", remove, transferOptions);
+
+            try
+            {
+                transferResult.Check();
+                foreach (TransferEventArgs transfer in transferResult.Transfers)
+                {
+                    rstList.Add(transfer.FileName);
+                }
+
+                return rstList;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
         public List<string> DownloadFile(string localPath, string remotePath, string FileName, bool remove = false)
         {
             List<string> rstList = new List<string>();

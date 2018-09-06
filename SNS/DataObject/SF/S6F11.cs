@@ -15,7 +15,7 @@ namespace SNS.DataObject.SF
             this.CODE_NAME = "S6,F11 Event Report Send (ERS)";
             this.DESCRIPTION = "Used by the equipment to notify the host of an event.";
             this.STRUCTURE = @"<L[3]
-   < U2[1] > *DATAIDzzzzzzzzzzzz
+   < U2[1] > *DATAID
    < U2[1] > *CEID
    < L[N]
        < L1[2]
