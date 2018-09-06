@@ -70,14 +70,14 @@ namespace SNS.Net
             return rstList;
         }
 
-        public List<string> DownloadFile(string remotePath, string localPath, bool remove = false)
+        public List<string> DownloadFile(string localPath, string remotePath, bool remove = false)
         {
             List<string> rstList = new List<string>();
             TransferOptions transferOptions = new TransferOptions();
             transferOptions.TransferMode = TransferMode.Binary;
 
             TransferOperationResult transferResult;
-            transferResult = SESSION.GetFiles($@"{remotePath}", $@"{localPath}", remove, transferOptions);
+            transferResult = SESSION.GetFiles($@"{localPath}", $@"{remotePath}", remove, transferOptions);
 
             try
             {
@@ -148,7 +148,7 @@ namespace SNS.Net
                 SESSION.RemoveFiles(path);
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
