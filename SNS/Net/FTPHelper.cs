@@ -77,7 +77,7 @@ namespace SNS.Net
             transferOptions.TransferMode = TransferMode.Binary;
 
             TransferOperationResult transferResult;
-            transferResult = SESSION.GetFiles($@"{localPath}", $@"{remotePath}", remove, transferOptions);
+            transferResult = SESSION.GetFiles($@"{remotePath}", $@"{localPath}", remove, transferOptions);
 
             try
             {
